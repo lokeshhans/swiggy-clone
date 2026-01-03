@@ -1,7 +1,7 @@
 import { food } from "../DATA/food";
 import FoodItem from "./FoodItem";
 
-const Second = () => {
+const FoodOption = () => {
   return (
     <>
       <div className="w-full  flex flex-col items-center pt-20  bg-white">
@@ -18,4 +18,4 @@ const Second = () => {
   );
 };
 
-export default Second;
+export default FoodOption;

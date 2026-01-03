@@ -1,7 +1,7 @@
 import { groceries } from "../DATA/groceries";
 import GrocerieItem from "./GrocerieItem";
 
-const Third = () => {
+const GrocerieOption = () => {
   return (
     <>
       <div className="w-full  flex flex-col items-center py-20 bg-white">
@@ -18,4 +18,4 @@ const Third = () => {
   );
 };
 
-export default Third;
+export default GrocerieOption;

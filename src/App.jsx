@@ -1,15 +1,15 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import Second from "./components/Second";
-import Third from "./components/Third";
+
+import { Outlet } from "react-router";
+// import Home from "./components/Home/Home";
+// import Restorant from "./components/Restorant/Restorant";
+
 
 const App = () => {
   return (
     <div className=" ">
-      <Header />
-      <Second/>
-      <Third/>
-      <Footer/>
+      <Outlet/>
+      {/* <Home/>
+      <Restorant/> */}
     </div>
   );
 };

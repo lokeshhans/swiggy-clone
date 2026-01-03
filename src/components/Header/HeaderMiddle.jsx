@@ -6,7 +6,7 @@ import { IoMdSearch } from "react-icons/io";
 const HeaderMiddle = () => {
   return (
     <>
-      <div className="flex items-center justify-center gap-2.5">
+      <div className="flex items-center justify-center h-40 gap-2.5">
         <img
           className="h-3/4 absolute left-0 top-10"
           src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png"
