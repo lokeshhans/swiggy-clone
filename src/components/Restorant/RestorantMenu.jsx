@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 const RestorantMenu = () => {
   const { id } = useParams();
   const [ResData, setResData] = useState([]);
+  const [selected, setSelected] = useState(null);
   const proxyServer = "https://proxy.corsfix.com/?";
   const swiggyAPI = `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.8964&lng=76.5909&restaurantId=${id}&submitAction=ENTER`;
   useEffect(() => {
@@ -22,10 +23,33 @@ const RestorantMenu = () => {
   // console.log(id)
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white ">
+      <div className="w-1/2 h-10 flex items-center justify-center gap-20  mt-10">
+        <button
+          className={`btn text-green-400 ${
+            selected == "veg" ? "bg-white" : "bg-gray-300"
+          } `}
+          onClick={() => {
+            setSelected(selected === "veg" ? null : "veg");
+          }}
+        >
+          Veg
+        </button>
+        <button
+          className={`btn text-green-400 ${
+            selected == "nonveg" ? "bg-white" : "bg-gray-300"
+          }`}
+          onClick={() => {
+            setSelected(selected === "nonveg" ? null : "nonveg");
+          }}
+        >
+          Non Veg
+        </button>
+      </div>
       {ResData.map((menuItems) => (
         <MenuCard
           key={menuItems?.card?.card?.title}
           menuItem={menuItems?.card?.card}
+          foodSelected={selected}
         />
       ))}
     </div>
