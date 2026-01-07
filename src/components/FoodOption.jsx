@@ -10,7 +10,7 @@ const FoodOption = () => {
         </h1>
         <div className="px-auto  w-[80%] h-30vh  grid grid-rows-2 grid-flow-col  ">
           {food.map((item) => (
-            <FoodItem key={item.id} item={item} />
+            <FoodItem key={item?.id} item={item} />
           ))}
         </div>
       </div>

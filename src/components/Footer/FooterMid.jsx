@@ -14,7 +14,7 @@ const FooterMid = () => {
               city.map((item) => (
                 <a href={item?.link}>
                   <div
-                    key={item.Id}
+                    key={item?.link}
                     className="btn bg-transparent py-6  max-w-50  text-gray-500 text-wrap rounded-xl  "
                   >
                     <span className="text-2 py-4  ">{item?.text}</span>

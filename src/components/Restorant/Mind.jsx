@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import MindItem from "./MindItem";
 import axios from "axios";
+import Shimmer from "./Shimmer";
 const proxyServer = "https://proxy.corsfix.com/?";
 
 const swiggyAPI =
@@ -10,13 +11,12 @@ const Mind = () => {
   useEffect(() => {
     async function fetchData() {
       const RestData = await axios.get(proxyServer + swiggyAPI);
-      const data = await RestData?.data?.data.cards[0].card.card.imageGridCards
-        .info;
+      const data = await RestData?.data?.data?.cards[0]?.card?.card?.imageGridCards?.info;
       setMindData(data);
     }
     fetchData();
   }, []);
-  console.log(MindData);
+  // console.log(MindData);
   return (
     <>
       <div className="w-full  flex flex-col items-center pt-20  bg-white">
@@ -25,8 +25,8 @@ const Mind = () => {
         </h1>
         <div className="px-auto  w-[80%] h-30vh    ">
           <div className="flex flex-nowrap overflow-auto gap-4">
-            {MindData.map((item) => (
-              <MindItem key={item.id} item={item} />
+            {MindData.length == 0 ? <Shimmer/> : MindData.map((item) => (
+              <MindItem key={item?.id} item={item} />
             ))}
           </div>
         </div>
