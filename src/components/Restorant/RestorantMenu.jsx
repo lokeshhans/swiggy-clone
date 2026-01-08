@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MenuCard from "./MenuCard";
 import { useParams } from "react-router";
+import MenuShimmer from "./MenuShimmer";
 
 const RestorantMenu = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const RestorantMenu = () => {
   // console.log(id)
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white ">
-      <div className="w-1/2 h-10 flex items-center justify-center gap-20  mt-10">
+      <div className="w-1/2 h-10 flex items-center justify-center gap-20  mt-10 ">
         <button
           className={`btn text-green-400 ${
             selected == "veg" ? "bg-white" : "bg-gray-300"
@@ -45,13 +46,19 @@ const RestorantMenu = () => {
           Non Veg
         </button>
       </div>
-      {ResData.map((menuItems) => (
-        <MenuCard
-          key={menuItems?.card?.card?.title}
-          menuItem={menuItems?.card?.card}
-          foodSelected={selected}
-        />
-      ))}
+      {ResData.length === 0 ? (
+        <MenuShimmer />
+      ) : (
+        <div className="w-screen">
+          {ResData.map((menuItems) => (
+            <MenuCard
+              key={menuItems?.card?.card?.title}
+              menuItem={menuItems?.card?.card}
+              foodSelected={selected}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

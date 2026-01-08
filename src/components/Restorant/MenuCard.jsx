@@ -7,7 +7,7 @@ const MenuCard = ({ menuItem, foodSelected }) => {
   const [isOpen, setIsOpen] = useState(true);
   if ("categories" in menuItem) {
     return (
-      <div className="w-full max-w-5xl mx-auto my-6    ">
+      <div className="   my-6 px-10  ">
         <p className="text-black font-bold text-xl text-start w-full ">
           {menuItem.title}
         </p>
@@ -105,9 +105,9 @@ const MenuCard = ({ menuItem, foodSelected }) => {
 
   return (
     <>
-      <div className=" flex items-center justify-center   px-20">
-        <div className=" enter pt-20  bg-white w-full   ">
-          <div className="flex items-center justify-between">
+      <div className=" flex items-center justify-center w-full px-10 ">
+        <div className=" enter pt-2  bg-white w-full    ">
+          <div className="flex items-center justify-between ">
             <h1 className="text-black font-bold text-2xl text-start    py-4 ">
               {menuItem?.title}
             </h1>
