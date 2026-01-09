@@ -11,7 +11,8 @@ const Mind = () => {
   useEffect(() => {
     async function fetchData() {
       const RestData = await axios.get(proxyServer + swiggyAPI);
-      const data = await RestData?.data?.data?.cards[0]?.card?.card?.imageGridCards?.info;
+      const data = await RestData?.data?.data?.cards[0]?.card?.card
+        ?.imageGridCards?.info;
       setMindData(data);
     }
     fetchData();
@@ -20,14 +21,16 @@ const Mind = () => {
   return (
     <>
       <div className="w-full  flex flex-col items-center pt-20  bg-white">
-        <h1 className="text-black font-bold text-3xl text-start w-[80%] px-auto  ">
+        <h1 className="w-[80%] px-auto text-black pb-[2%] font-semibold text-sm md:text-xl lg:text-3xl xl:text-4xl  text-start sm:w-full    px-[5%]  ">
           What's on your mind?
         </h1>
-        <div className="px-auto  w-[80%] h-30vh    ">
+        <div className="px-auto  w-[80%] h-[10%]    ">
           <div className="flex flex-nowrap overflow-auto gap-4">
-            {MindData.length == 0 ? <Shimmer/> : MindData.map((item) => (
-              <MindItem key={item?.id} item={item} />
-            ))}
+            {MindData.length == 0 ? (
+              <Shimmer />
+            ) : (
+              MindData.map((item) => <MindItem key={item?.id} item={item} />)
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
-import FoodOption from "../FoodOption";
-import GrocerieOption from "../GrocerieOption";
+import FoodOption from "../Header/HeaderMedium/FoodOption";
+import GrocerieOption from "../Header/HeaderMedium/GrocerieOption";
 import Footer from "../Footer/Footer";
 
 const Home = () => {

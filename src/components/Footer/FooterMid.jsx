@@ -6,26 +6,30 @@ const FooterMid = () => {
     <>
       <div className=" bg-white flex  flex-col items-center justify-center w-full">
         <div className=" flex flex-col  items-center w-[80%]">
-          <h2 className=" w-[80%] p-2 mt-16 text-start text-3xl text-black text-bold">
+          <h2 className=" text-black pb-[2%] font-semibold text-sm md:text-xl lg:text-3xl xl:text-4xl  text-start sm:w-full   w-[90%] px-[5%]">
             Cities with food delivery
           </h2>
-          <div className=" grid grid-cols-4   gap-4  ">
+          <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6   ">
             {city &&
               city.map((item) => (
                 <a href={item?.link}>
                   <div
                     key={item?.link}
-                    className="btn bg-transparent py-6  max-w-50  text-gray-500 text-wrap rounded-xl  "
+                    className="btn bg-transparent   max-w-50  text-gray-500 text-wrap rounded-xl  "
                   >
-                    <span className="text-2 py-4  ">{item?.text}</span>
+                    <span className="text-2 py-4 text-xs md:text-sm lg:text-md  ">
+                      {item?.text}
+                    </span>
                   </div>
                 </a>
               ))}
 
             <a className="">
-              <h4 className="btn bg-transparent  rounded-xl p-6  min-w-50 text-2px  text-gray-500 text-wrap">
-                Show More
-              </h4>
+              <div className="btn bg-transparent py-6  max-w-50  text-gray-500 text-wrap rounded-xl ">
+                <span className="text-2 py-4 text-xs md:text-sm lg:text-md ">
+                  Show More
+                </span>
+              </div>
               <div>
                 <svg
                   width="16"
@@ -45,23 +49,26 @@ const FooterMid = () => {
           </div>
         </div>
         <div className=" flex flex-col  items-center w-[80%]">
-          <h2 className=" w-[80%] p-2 mt-16 text-start text-3xl text-black text-bold">
+          <h2 className=" text-black pb-[2%] font-semibold text-sm md:text-xl lg:text-3xl xl:text-4xl  text-start sm:w-full   w-[90%] px-[5%]">
             Cities with grocery delivery
           </h2>
-          <div className=" grid grid-cols-4   gap-4  ">
+          <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
             {instamart &&
               instamart.map((item) => (
                 <a href={item?.link}>
                   <div className="btn bg-transparent py-6  max-w-50  text-gray-500 text-wrap rounded-xl  ">
-                    <span className="text-2 py-4  ">{item?.text}</span>
+                    <span className="text-2 py-4 text-xs md:text-sm lg:text-md  ">
+                      {item?.text}
+                    </span>
                   </div>
                 </a>
               ))}
-
             <a className="">
-              <h4 className="btn bg-transparent  rounded-xl p-6  min-w-50 text-2px  text-gray-500 text-wrap">
-                Show More
-              </h4>
+              <div className="btn bg-transparent py-6  max-w-50  text-gray-500 text-wrap rounded-xl ">
+                <span className="text-2 py-4 text-xs md:text-sm lg:text-md ">
+                  Show More
+                </span>
+              </div>
               <div>
                 <svg
                   width="16"

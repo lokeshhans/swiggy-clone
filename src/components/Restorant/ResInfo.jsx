@@ -19,25 +19,25 @@ const ResInfo = ({ resData }) => {
   }
   return (
     <>
-      <div className=" border-b-2 font-semibold    w-full text-black py-4 ">
-        <div className="flex w-full justify-between   items-center pb-6 ">
-          <div className=" px-4 py-2  ">
-            <p className="">{resData?.name}</p>
+      <div className=" border-b-2 font-semibold   w-full text-black  ">
+        <div className="flex w-full justify-between   items-center  gap-4">
+          <div className=" px-4 py-2 w-3/4 ">
+            <p className=" text-[10px] sm:text-[24px] lg:text-md ">{resData?.name}</p>
             {resData.dafaultPrice ? (
-              <p>{"🪙" + resData?.defaultPrice / 100}</p>
+              <p className="text-xs sm:text-sm lg:text-lg xl:text-xl text-gray-300">{"🪙" + resData?.defaultPrice / 100}</p>
             ) : (
               ""
             )}
             {resData?.ratings?.aggregatedRating?.rating ? (
-              <p>{"⭐" + resData?.ratings?.aggregatedRating?.rating}</p>
+              <p className="text-xs sm:text-sm lg:text-lg xl:text-xl ">{"⭐" + resData?.ratings?.aggregatedRating?.rating}</p>
             ) : (
               ""
             )}
-            <p className="text-sm text-gray-500">{resData?.description}</p>
+            <p className="text-[8px] sm:text-[20px] lg:text-md text-gray-500 max-h-36 overflow-y-auto ">{resData?.description}</p>
           </div>
-          <div className="w-[20%] relative flex flex-col items-center justify-center  ">
+          <div className="w-1/4 relative flex flex-col items-center justify-center  ">
             <img
-              className=" min-w-52 min-h-36 h-36 rounded object-cover "
+              className=" min-w-28 w-32 md:w-36 lg:w-40 xl:w-44 min-h-28 h-28 rounded object-cover "
               src={
                 "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" +
                 resData?.imageId

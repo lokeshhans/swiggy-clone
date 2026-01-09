@@ -4,7 +4,7 @@ import HeaderBottom from './HeaderBottom.jsx'
 
 const Header = () => {
   return (
-    <header className="bg-[#ff5200] flex flex-col  h-full justify-between ">
+    <header className="bg-[#ff5200] flex flex-col  h-full justify-between w-full ">
       <HeaderTop/>
       <HeaderMiddle/>
       <HeaderBottom/>
